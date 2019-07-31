@@ -26,7 +26,6 @@ int main()
     FILE *file;
     file=fopen("tower_of_hanoi.txt","w");
 	int n;
-    fprintf(file,"Name: Nabin Dhakal\nRoll:022\nProgram:BCT\n\n");
 	printf("Enter number of disks: ");
     fprintf(file,"Enter number of disks: ");
 	scanf("%d",&n);

@@ -14,9 +14,6 @@ int main()
         h[i]=-1;
     }
 
-    fprintf(file,"\nName:Nabin Dhakal\nRoll:022\nProgram:BCT\n");
-    fprintf(file,"-----------------------------------------------\n\n");
-
     while(1)
     {
 		printf("\nImplementation of Hashing as a searching algorithm\n1. Insert\n2. Search\n3. Display\n4. Exit\n");

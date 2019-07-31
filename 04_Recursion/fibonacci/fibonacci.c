@@ -1,12 +1,10 @@
 #include<stdio.h>
-//#include<conio.h>
 int fibo_series(int);
 int main()
 {
     FILE *file;
     file=fopen("fibonacci.txt","w");
 	int n,i;
-	fprintf(file,"Name: Nabin Dhakal\nRoll: 022\nProgram: BCT\n\n");
 	printf("Enter number of terms: 	");
     fprintf(file,"Enter number of terms: ");
 	scanf("%d",&n);

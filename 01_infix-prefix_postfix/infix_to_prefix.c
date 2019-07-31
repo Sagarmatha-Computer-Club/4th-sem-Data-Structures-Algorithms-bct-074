@@ -1,4 +1,3 @@
-//NABIN-022-BCT
 #include <stdio.h>
 #include <ctype.h>
 

@@ -10,7 +10,6 @@ int main()
 	int i,a,b,m,n,choice;
 	random[0]=5;
 	m=600;
-	fprintf(file,"\nName:Nabin Dhakal\nRoll:022\nProgram:BCT\n\n");
 	
 	printf("Enter value of a: ");
 	fprintf(file,"Enter value of a: ");
