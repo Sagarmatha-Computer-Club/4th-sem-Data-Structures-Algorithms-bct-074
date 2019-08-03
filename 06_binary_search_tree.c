@@ -17,19 +17,24 @@ struct node *delete (struct node *, int);
 struct node *newNode();
 struct node *search_leaf(struct node *);
 
+FILE * fp;
 int main()
 {
+	fp = fopen("binary_search_tree.txt", "w");
 	int choice, data;
 	while (1)
 	{
 		printf("\nEnter your choice: \n");
+		fprintf(fp,"\nEnter your choice: \n");
 		printf("\n1.Insert\n2.Traverse\n3.Delete\n4.Exit\n>> ");
+		fprintf(fp,"\n1.Insert\n2.Traverse\n3.Delete\n4.Exit\n>> ");
 		scanf("%d", &choice);
 		switch (choice)
 		{
 			case 1:
 			{
 				printf("\nEnter a number: ");
+				fprintf(fp,"\nEnter a number: ");
 				scanf("%d", &data);
 				if(root==NULL)
 				{
@@ -42,7 +47,9 @@ int main()
 			break;
 			case 2:
 				printf("\nEnter the choice of traverse: \n");
+				fprintf(fp,"\nEnter the choice of traverse: \n");
 				printf("\n1.Inorder\n2.Preorder\n3.sPostorder\n\n");
+				fprintf(fp,"\n1.Inorder\n2.Preorder\n3.sPostorder\n\n");
 				scanf("%d", &choice);
 				switch (choice)
 				{
@@ -60,6 +67,7 @@ int main()
 			case 3:
 			{
 				printf("Enter value to be deleted: ");
+				fprintf(fp,"Enter value to be deleted: ");
 				scanf("%d", &data);
 				delete (root, data);
 			}
@@ -69,6 +77,7 @@ int main()
 			}
 		}
 	}
+	fclose(fp);
 	return 0;
 }
 
@@ -107,6 +116,7 @@ void inorder(struct node *sub_root) //traverse in a left, root, right order
 	{
 		inorder(sub_root->left);
 		printf("%d\t", sub_root->data);
+		fprintf(fp,"%d\t", sub_root->data);
 		inorder(sub_root->right);
 	}
 }
@@ -117,6 +127,7 @@ void preorder(struct node *sub_root) //traverse in root, left, right order
 	if (sub_root != NULL)
 	{
 		printf("%d\t", sub_root->data);
+		fprintf(fp,"%d\t", sub_root->data);
 		preorder(sub_root->left);
 		preorder(sub_root->right);
 	}
@@ -129,6 +140,7 @@ void postorder(struct node *sub_root) //traverse in left, right, root order
 		postorder(sub_root->left);
 		postorder(sub_root->right);
 		printf("%d\t", sub_root->data);
+		fprintf(fp,"%d\t", sub_root->data);
 	}
 }
 struct node *delete (struct node *sub_root, int value)//deleting a node or a data
@@ -162,6 +174,7 @@ struct node *delete (struct node *sub_root, int value)//deleting a node or a dat
 		if (sub_root == NULL)
 		{
 			printf("\nValue not found.\n");
+			fprintf(fp,"\nValue not found.\n");
 			return NULL;
 		}
 		else
@@ -174,6 +187,7 @@ struct node *delete (struct node *sub_root, int value)//deleting a node or a dat
 		if (sub_root == NULL)
 		{
 			printf("\nValue not found.\n");
+			fprintf(fp,"\nValue not found.\n");
 			return NULL;
 		}
 		else
